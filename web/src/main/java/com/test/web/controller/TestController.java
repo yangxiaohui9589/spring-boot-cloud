@@ -45,4 +45,12 @@ public class TestController {
         //roles.getContent()
         return "Role: ";
     }
+
+    @RequestMapping("/test2")
+    String test2() {
+        PagedResources<Role> roles = roleClient.findAll();
+        List<Role> list = restTemplate.getForObject("http://data/roles", List.class);
+        //roles.getContent()
+        return "Role: ";
+    }
 }
